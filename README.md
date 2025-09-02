@@ -5,7 +5,7 @@ A Power BI solution for AtliQ Hardware to diagnose sales decline, understand pro
 ---
 
 ## 📌 Problem Statement
-The client, **AtliQ Hardware**, faced a continuous **sales decline** and lacked visibility into root causes. They needed a **data-driven** solution to:
+The sales team at AtliQ struggles with inefficient, manual Excel reports, leading to inaccurate data and poor decision-making. Regional managers sugarcoat figures, creating a lack of transparency that prevents effective tracking of market dynamics and informed sales strategies.
 - Analyze sales performance & trends
 - Compare **profitability** across **markets** and **customer segments**
 - Enable **drill-down** insights for faster, informed decisions
