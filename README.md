@@ -41,41 +41,7 @@ Shift focus from solely revenue-based sales to profitability-driven strategies.
 
 Make informed decisions on resource allocation and pricing by understanding the true profitability of different markets and customer segments.
 
----
 
-## 🧱 Data Model (Star Schema)
-- **Fact Table**
-  - `FactSales` (date_key, market_key, customer_key, product_key, qty, revenue, cost)
-- **Dimensions**
-  - `DimDate` (date, month, quarter, year, fiscal)
-  - `DimMarket` (market, region, zone)
-  - `DimCustomer` (customer, type: Brick & Mortar / E-Commerce)
-  - `DimProduct` (category, subcategory, brand)
-
-> Note: Rename columns to your dataset’s exact names as needed.
-
----
-
-## 📐 Core DAX Measures (Examples)
-> Adjust table/column names to match your model.
-
-```DAX
-Revenue := SUM(FactSales[revenue])
-
-Cost := SUM(FactSales[cost])
-
-Profit := [Revenue] - [Cost]
-
-Profit Margin % := DIVIDE([Profit], [Revenue])
-
-Sales Qty := SUM(FactSales[qty])
-
-Revenue LY := CALCULATE([Revenue], DATEADD(DimDate[Date], -1, YEAR))
-
-Profit Contribution % :=
-DIVIDE([Profit], CALCULATE([Profit], ALL(DimMarket), ALL(DimCustomer)))
-
-Top Customer Revenue % :=
 VAR TotalRev = CALCULATE([Revenue], ALL(DimCustomer))
 RETURN DIVIDE([Revenue], TotalRev)
 
